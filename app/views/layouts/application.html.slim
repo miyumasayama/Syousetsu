@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title
+      | Syousetsu
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    header
+      .navbar.navbar-fixed-top.navbar-inverse
+        .nav
+          ul
+            li= link_to_unless_current "ホーム", root_path 
+            li= link_to_unless_current "ヘルプ", profiles_about_path
+            li= link_to_unless_current "ログイン", '#'
+            li= link_to_unless_current "はじめてのひと", signup_path
+    
+    = yield

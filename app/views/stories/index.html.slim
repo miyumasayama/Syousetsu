@@ -1,0 +1,23 @@
+h1 私のお話
+
+= link_to "つくる", new_story_path, class: 'btn btn-info'
+
+table.table.table-hover
+  thead
+    tr
+      th = Story.human_attribute_name (:title)
+      th = Story.human_attribute_name (:created_at)
+      th
+      th
+      th
+  tbody
+    - @story.each do |story|
+      tr style= "background-color: #{cycle('#FFffFF','#FFff99')}"
+        td = story.title
+        td = story.created_at
+        td = link_to "かえる", edit_story_path(story.id), class: 'btn btn-primary'
+        td = link_to "みる", story_path(story.id), class: 'btn btn-success'
+        td = link_to "けす", story_path(story.id), method: :delete, class: 'btn btn-danger', data: { confirm: "本当に削除しますか？" }
+
+
+    

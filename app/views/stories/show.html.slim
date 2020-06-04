@@ -1,0 +1,20 @@
+h1 = @story.title
+
+= link_to "もどる", stories_path
+table.table.table-hover
+  tbody
+    tr
+      th = Story.human_attribute_name(:first)
+      td = @story.first
+    tr
+      th = Story.human_attribute_name(:second)
+      td = @story.second
+    tr
+      th = Story.human_attribute_name(:third)
+      td = @story.third
+    tr
+      th = Story.human_attribute_name(:last)
+      td = @story.last
+
+= link_to "かえる", edit_story_path(@story.id), class: 'btn btn-primary'
+= link_to "けす", story_path(@story.id), method: :delete, class: 'btn btn-danger',  data: { confirm: "本当に削除しますか？" }

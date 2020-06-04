@@ -1,0 +1,24 @@
+- if @story.errors
+  .ul
+    - @story.errors.full_messages.each do |msg|
+          = msg
+
+h1 新しいお話
+
+= form_with model: @story, local: true do |f|
+    .form-group
+        = f.label :title
+        = f.text_field :title, class: 'form-control', size:80
+    .form-group
+        = f.label :first
+        = f.text_area :first, class: 'form-control',size:"50x10"
+    .form-group
+        = f.label :second
+        = f.text_area :second, class: 'form-control',size:"50x10"
+    .form-group
+        = f.label :third
+        = f.text_area :third, class: 'form-control',size:"50x10"
+    .form-group
+        = f.label :last
+        = f.text_area :last, class: 'form-control',size:"50x10"
+    = f.submit 'つくる', class: 'btn btn-info'
