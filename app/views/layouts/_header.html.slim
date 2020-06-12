@@ -1,0 +1,9 @@
+header
+  h5.head-title My stories
+  .navbar.navbar-fixed-top.navbar-inverse
+    .nav
+      ul
+        li= link_to_unless_current "ホーム", root_path 
+        li= link_to_unless_current "ヘルプ", profiles_about_path
+        li= link_to_unless_current "ログイン", '#'
+        li= link_to_unless_current "はじめてのひと", signup_path

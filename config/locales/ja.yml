@@ -217,8 +217,8 @@ ja:
         last: 結
         created_at: 作成日時
       user:
-        username: 名前
+        name: 名前
         password: パスワード
-        password_confirmation: パスワード確認
+        password_confirmation: パスワード(確認)
         email: メールアドレス
         remember_me: ほぞんする
