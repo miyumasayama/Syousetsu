@@ -10,6 +10,10 @@ h1 ログイン
       = f.password_field :password, class: 'form-control'
 
       = f.submit "ログインする", class: "btn btn-primary"
+
+      = f.label :remember_me, class: "checkbox inline" do
+      = f.check_box :remember_me
+      span ユーザーを記憶する
     p
       | 初めての人は #{link_to "こちら", signup_path}
 
