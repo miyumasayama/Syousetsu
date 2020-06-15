@@ -8,8 +8,9 @@
           li= link_to_unless_current "ヘルプ", profiles_about_path
           - if logged_in?
             li= link_to "私のお話", '#'
+            li= link_to "ユーザー一覧", users_path
             li= link_to "プロフィール", current_user
-            li= link_to "設定", '#'
+            li= link_to "登録情報変更", edit_user_path(current_user)
             li= link_to "ログアウト", logout_path, method: :delete
           - else
             li= link_to "ログイン", login_path
